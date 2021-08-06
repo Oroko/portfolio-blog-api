@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_183732) do
+ActiveRecord::Schema.define(version: 2021_08_06_202100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,9 +35,9 @@ ActiveRecord::Schema.define(version: 2021_08_06_183732) do
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.string "githubLink"
-    t.string "projectImg_url"
-    t.string "techStack"
+    t.string "image_url"
+    t.string "github_url"
+    t.string "stacks", array: true
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

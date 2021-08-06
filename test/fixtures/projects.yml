@@ -3,13 +3,13 @@
 one:
   title: MyString
   description: MyText
-  githubLink: MyString
-  projectImg_url: MyString
-  techStack: MyString
+  image_url: MyString
+  github_url: MyString
+  stacks: MyString
 
 two:
   title: MyString
   description: MyText
-  githubLink: MyString
-  projectImg_url: MyString
-  techStack: MyString
+  image_url: MyString
+  github_url: MyString
+  stacks: MyString
