@@ -1,4 +1,4 @@
 class ProjectSerializer
   include FastJsonapi::ObjectSerializer
-  attributes 
+  attributes :title, :description, :stacks, :image_url, :github_url
 end
