@@ -1,28 +1,28 @@
-class Api::V1::PostsController < ApplicationController 
-  def index 
-    posts = Post.all 
+class Api::V1::PostsController < ApplicationController
+  def index
+    posts = Post.all
 
-    render json: PostSerializer.new(posts)
+    render json: posts
   end
 
-  def create 
+  def create
     post = Post.new(post_params)
-    if post.save 
-      render json: post, status: :accepted  
+    if post.save
+      render json: post, status: :accepted
     else
       render json: { errors: post.errors.full_messages }, status: :unprocessable_entity
     end
   end
 
-  def show 
-    post = Post.find_by(id: params[:id]) 
+  def show
+    post = Post.find_by(id: params[:id])
 
-    render json: PostSerializer.new(post)
+    render json: post
   end
 
-  private 
+  private
 
-  def post_params 
+  def post_params
     params.require(:post).permit(:title, :content)
   end
 end

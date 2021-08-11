@@ -2,7 +2,7 @@ class Api::V1::ProjectsController < ApplicationController
   def index
     projects = Project.all
 
-    render json: ProjectSerializer.new(projects)
+    render json: projects
   end
 
   def create
@@ -17,7 +17,7 @@ class Api::V1::ProjectsController < ApplicationController
   def show
     project = Project.find_by(id: params[:id])
 
-    render json: ProjectSerializer.new(project)
+    render json: project
   end
 
   private

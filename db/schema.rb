@@ -10,37 +10,36 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_06_202100) do
-
+ActiveRecord::Schema.define(version: 20_210_806_202_100) do
   # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
+  enable_extension 'plpgsql'
 
-  create_table "comments", force: :cascade do |t|
-    t.bigint "post_id", null: false
-    t.string "name"
-    t.string "email"
-    t.string "message"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["post_id"], name: "index_comments_on_post_id"
+  create_table 'comments', force: :cascade do |t|
+    t.bigint 'post_id', null: false
+    t.string 'name'
+    t.string 'email'
+    t.string 'message'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
+    t.index ['post_id'], name: 'index_comments_on_post_id'
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'posts', force: :cascade do |t|
+    t.string 'title'
+    t.text 'content'
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  create_table "projects", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.string "image_url"
-    t.string "github_url"
-    t.string "stacks", array: true
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+  create_table 'projects', force: :cascade do |t|
+    t.string 'title'
+    t.text 'description'
+    t.string 'image_url'
+    t.string 'github_url'
+    t.string 'stacks', array: true
+    t.datetime 'created_at', precision: 6, null: false
+    t.datetime 'updated_at', precision: 6, null: false
   end
 
-  add_foreign_key "comments", "posts"
+  add_foreign_key 'comments', 'posts'
 end
